@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+body {
+  background: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Image */
+.background {
+  content: "";
+  height: 100vh;
+  width: 100%;
+  background-size: 200vh 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  filter:  brightness(0.94) blur(5px);
+  -webkit-filter: brightness(0.7) blur(5px);
+}
+
+/* blur */
+/* .content {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+} */
+.showcase {
+  overflow: hidden;
+}
+
+.content:hover {
+  filter: opacity(1) blur(0px);
+  -webkit-filter: opacity(1) blur(0px);
+}
+
+.background:hover {
+  filter: brightness(1) blur(0px);
+  -webkit-filter: brightness(1) blur(0px);
+  transform: scale(1.01);
+}
+.background:hover ~ .content {
+  filter: opacity(86%) blur(2px);
+  -webkit-filter: opacity(86%) blur(2px);
+  transform: scale(1.01);
+}
+
+/* Logo + Welcome text  */
+.content {
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 50%;
+  margin-top: 105px;
+  margin-left: -145px;
+  width: 300px;
+  height: 350px;
+  text-align: center;
+  transition: all 1000ms;
+}
+.content .switchLocale {
+  height: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content .logo {
+  height: 180px;
+  height: 180px;
+}
+
+.content .title {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+.content .text {
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+/* grid */
+.grid-3 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.bg-light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.bg-dark {
+  background: #333;
+  color: #f4f4f4;
+}
+footer {
+  padding: 0.7rem;
+}
+footer p {
+  margin: 0;
+}
+
+/* Small Screens */
+@media (max-width: 560px) {
+  .showcase {
+    height: 56vh;
+  }
+  .content {
+    top: 5%;
+    margin-top: 5px;
+  }
+  .content .logo {
+    height: 140px;
+    width: 140px;
+  }
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .services div {
+    border-bottom: #333 dashed 1px;
+    padding: 1rem 0.8rem;
+  }
+}
+
+/* Landscape */
+@media (max-height: 500px) {
+  .content .title,
+  .content .text {
+    display: none;
+  }
+  .content {
+    top: 0%;
+  }
+}
